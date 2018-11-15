@@ -15,22 +15,6 @@ ActiveRecord::Schema.define(version: 2018_11_14_233613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "ads", force: :cascade do |t|
-    t.integer "user_id"
-    t.date "order_date"
-    t.date "shipping_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
-    t.date "order_date"
-    t.date "shipping_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.text :name
     t.text :description
