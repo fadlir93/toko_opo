@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_035148) do
+ActiveRecord::Schema.define(version: 2018_11_15_090543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,14 @@ ActiveRecord::Schema.define(version: 2018_11_15_035148) do
   end
 
   create_table "product_reviews", force: :cascade do |t|
-    t.string "product_id"
-    t.string "int"
-    t.string "user_id"
+    t.bigint "product_id"
+    t.bigint "user_id"
     t.string "review"
-    t.string "string"
-    t.string "rate"
+    t.integer "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_reviews_on_product_id"
+    t.index ["user_id"], name: "index_product_reviews_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -49,4 +49,6 @@ ActiveRecord::Schema.define(version: 2018_11_15_035148) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "product_reviews", "products"
+  add_foreign_key "product_reviews", "users"
 end
