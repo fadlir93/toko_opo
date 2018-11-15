@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_11_15_010135) do
+=======
+ActiveRecord::Schema.define(version: 2018_11_14_093851) do
+>>>>>>> 1eee547e6c4adba6f809f77d1eaa84d14c7df8f8
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "categories", force: :cascade do |t|
+=======
+  create_table "products", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.float "price"
+    t.integer "stock"
+>>>>>>> 1eee547e6c4adba6f809f77d1eaa84d14c7df8f8
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
