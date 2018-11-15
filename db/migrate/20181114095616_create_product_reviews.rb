@@ -5,6 +5,8 @@ class CreateProductReviews < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :review
       t.integer :rate
+      t.reference :product, foreign_key: true
+      t.reference :user, foreign_key: true
 
       t.timestamps
     end
