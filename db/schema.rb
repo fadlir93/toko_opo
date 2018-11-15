@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_233613) do
     t.integer :stock
     t.timestamps
   end
-  
+
   create_table "categories", force: :cascade do |t|
 
     t.text "name"
