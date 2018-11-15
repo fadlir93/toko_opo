@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2018_11_14_233613) do
 
   # These are extensions that must be enabled in order to support this database
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_233613) do
   end
 
   create_table "categories", force: :cascade do |t|
+
     t.text "name"
     t.text "description"
     t.datetime "created_at", null: false
