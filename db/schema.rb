@@ -16,12 +16,22 @@ ActiveRecord::Schema.define(version: 2018_11_15_035148) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "ads", force: :cascade do |t|
-    t.integer "user_id"
-    t.date "order_date"
-    t.date "shipping_id"
+  create_table "categories", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "product_reviews", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "user_id"
+    t.string "review"
+    t.integer "rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_reviews_on_product_id"
+    t.index ["user_id"], name: "index_product_reviews_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -70,4 +80,6 @@ ActiveRecord::Schema.define(version: 2018_11_15_035148) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "product_reviews", "products"
+  add_foreign_key "product_reviews", "users"
 end
