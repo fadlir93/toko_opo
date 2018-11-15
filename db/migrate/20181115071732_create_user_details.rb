@@ -4,7 +4,7 @@ class CreateUserDetails < ActiveRecord::Migration[5.2]
       t.text :fullname
       t.text :addres
       t.integer :gender
-      t.varchar :phone_number
+      t.integer :phone_number
       t.references :user, foreign_key: true
 
       t.timestamps
