@@ -54,5 +54,4 @@ ActiveRecord::Schema.define(version: 2018_11_15_083328) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "orders", "users"
 end
