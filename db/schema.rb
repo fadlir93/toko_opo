@@ -10,12 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_11_15_035148) do
-=======
+
 ActiveRecord::Schema.define(version: 2018_11_14_233613) do
->>>>>>> f61e9d9c7a83388fe4dc25e42db6970120923a3d
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,12 +25,6 @@ ActiveRecord::Schema.define(version: 2018_11_14_233613) do
   end
 
   create_table "categories", force: :cascade do |t|
-<<<<<<< HEAD
-<<<<<<< HEAD
-    t.text "name"
-    t.text "description"
-=======
-
     t.text "name"
     t.text "description"
     t.datetime "created_at", null: false
@@ -48,5 +38,5 @@ ActiveRecord::Schema.define(version: 2018_11_14_233613) do
     t.datetime "updated_at", null: false
   end
 
->>>>>>> f61e9d9c7a83388fe4dc25e42db6970120923a3d
+
 end
