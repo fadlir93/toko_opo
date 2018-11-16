@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2018_11_16_205718) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "product_categories", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_product_categories_on_category_id"
+    t.index ["product_id"], name: "index_product_categories_on_product_id"
+  end
+
   create_table "product_reviews", force: :cascade do |t|
     t.bigint "product_id"
     t.bigint "user_id"
@@ -82,6 +91,8 @@ ActiveRecord::Schema.define(version: 2018_11_16_205718) do
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"
+  add_foreign_key "product_categories", "categories"
+  add_foreign_key "product_categories", "products"
   add_foreign_key "product_reviews", "products"
   add_foreign_key "product_reviews", "users"
   add_foreign_key "user_details", "users"
