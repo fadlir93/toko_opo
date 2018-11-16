@@ -3,23 +3,23 @@ class ProductReviewController < ApplicationController
     before_action :find_product, only: [:destroy, :show]
 
     def index
-        product_review = ProductReview.select()
-        if (@product.present?)
-            render json: product_review, status :ok
+        product_review = ProductReview.all()
+        if (product_review.present?)
+            render json: product_review, status: :ok
         else
             render json: {
                 message: "Product Review is empty"
-            }, status :unprocessible_entity
+            }, status: :unprocessible_entity
         end
     end
 
     def show
         if (@product_review.present?)
-            render json: @product_review, status :ok
+            render json: @product_review, status: :ok
         else
             render json: {
                 message: "Product Review is empty"
-            }, status :unprocessible_entity
+            }, status: :unprocessible_entity
         end
     end
 
@@ -28,11 +28,11 @@ class ProductReviewController < ApplicationController
         @product_review.destroy!
         render json: {
                 message: "Delete Success"
-            }, status :ok
+            }, status: :ok
         else
             render json: {
                 message: "Delete failed"
-            }, status :unprocessible_entity
+            }, status: :unprocessible_entity
        end
     end
 
@@ -41,11 +41,11 @@ class ProductReviewController < ApplicationController
         if (product_review.save)
             render json: {
                 message: "Success insert data"
-            }, status :created
+            }, status: :created
         else
             render json: {
                 message: "Insert data failed"
-            }, status :unprocessible_entity
+            }, status: :unprocessible_entity
        end
             
     end
