@@ -10,12 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_11_15_093540) do
-=======
 
 ActiveRecord::Schema.define(version: 2018_11_15_035148) do
->>>>>>> a9c875acf22d740c39da2f69be4d4b8bd1666435
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +30,8 @@ ActiveRecord::Schema.define(version: 2018_11_15_035148) do
     t.string "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_order_details_on_order_id"
-    t.index ["product_id"], name: "index_order_details_on_product_id"
+    t.index ["product_id"], name: "index_product_reviews_on_product_id"
+    t.index ["user_id"], name: "index_product_reviews_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -46,10 +42,6 @@ ActiveRecord::Schema.define(version: 2018_11_15_035148) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-<<<<<<< HEAD
-  create_table "product_reviews", force: :cascade do |t|
-    t.bigint "product_id"
-=======
   create_table "product_categories", force: :cascade do |t|
     t.integer "product_id"
     t.integer "category_id"
@@ -59,14 +51,12 @@ ActiveRecord::Schema.define(version: 2018_11_15_035148) do
 
   create_table "orders", force: :cascade do |t|
     t.string "order_date"
->>>>>>> a9c875acf22d740c39da2f69be4d4b8bd1666435
     t.bigint "user_id"
     t.string "review"
     t.integer "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_reviews_on_product_id"
-    t.index ["user_id"], name: "index_product_reviews_on_user_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
