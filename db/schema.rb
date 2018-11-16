@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2018_11_15_090543) do
     t.index ["user_id"], name: "index_product_reviews_on_user_id"
   end
 
-  end
 
   create_table "product_reviews", force: :cascade do |t|
     t.bigint "product_id"
