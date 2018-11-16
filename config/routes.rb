@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   get "/product_review/detail", to: "product_review#show"
   post "/product_reviews", to: "product_review#create"
   delete "/product_review/delete", to: "product_review#destroy"
+
+  get "/product", to: "product#index"
+  get "/product/detail", to: "product#show"
+  delete "/product/delete", to: "product#destroy"
+  post "/product/new", to: "product#create"
   
+
 
 end
