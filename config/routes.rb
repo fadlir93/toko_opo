@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   get '/order_details', to: 'order_details#index'
   get '/order_detail/:id', to: 'order_details#show'
-  delete '/order_detail/:id', to: 'order_details#dstroy'
+  post '/order_detail', to: 'order_details#create'
+  delete '/order_detail/:id/delete', to: 'order_details#destroy'
 end
